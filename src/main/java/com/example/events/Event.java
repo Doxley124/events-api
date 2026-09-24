@@ -16,14 +16,16 @@ class Event {
     private LocalDateTime date;
     private String location;
     private double price;
+    private String mainType;
 
     public Event(String eventName, String description, LocalDateTime date,
-                 String location, double price) {
+                 String location, double price, String mainType) {
         this.eventName = eventName;
         this.description = description;
         this.date = date;
         this.location = location;
         this.price = price;
+        this.mainType = mainType;
     }
 
     public Event() {
@@ -77,4 +79,11 @@ class Event {
         this.price = price;
     }
 
+    public String getMainType() {
+        return mainType;
+    }
+
+    public void setMainType(String mainType) {
+        this.mainType = mainType;
+    }
 }

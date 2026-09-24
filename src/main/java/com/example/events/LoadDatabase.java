@@ -23,21 +23,23 @@ class LoadDatabase {
         return args -> {
             log.info("Preloading " + eventRepository.save(
                     new Event(
-                            "NOISE - experimental jam night",
-                            "",
+                            "NOISE",
+                            "Experimental music jam night.",
                             LocalDateTime.of(LocalDate.of(2026, 11, 20), LocalTime.NOON),
                             "The Shed - London",
-                            11.99
+                            11.99,
+                            "music"
                     )
                 )
             );
             log.info("Preloading " + eventRepository.save(
                             new Event(
-                                    "Sit Down & Chill - ambient music night with rugs",
-                                    "",
+                                    "Life Drawing",
+                                    "1 hour life drawing class with 2 models.",
                                     LocalDateTime.of(LocalDate.of(2026, 12, 2), LocalTime.MIDNIGHT),
                                     "Willow Hall",
-                                    8
+                                    8,
+                                    "art"
                             )
                     )
             );
