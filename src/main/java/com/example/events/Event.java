@@ -3,6 +3,7 @@ package com.example.events;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -14,45 +15,45 @@ class Event {
     private String eventName;
     private String description;
     private LocalDateTime date;
-    private String location;
+    private City city;
+    private String venue;
     private double price;
     private String mainType;
 
-    public Event(String eventName, String description, LocalDateTime date,
-                 String location, double price, String mainType) {
+    public Event(String eventName, String description, LocalDateTime date, City city, String venue, double price, String mainType) {
         this.eventName = eventName;
         this.description = description;
         this.date = date;
-        this.location = location;
+        this.city = city;
+        this.venue = venue;
         this.price = price;
         this.mainType = mainType;
     }
 
-    public Event() {
-    }
+    public Event() {}
 
     public Long getId() {
-        return this.id;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    public String getEventName() {
-        return this.eventName;
+        return id;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public void setDescription(String pinyin) {
-        this.description = pinyin;
+    public String getEventName() {
+        return eventName;
     }
 
-    public void setEventName(String hanzi) {
-        this.eventName = hanzi;
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public LocalDateTime getDate() {
@@ -63,12 +64,20 @@ class Event {
         this.date = date;
     }
 
-    public String getLocation() {
-        return location;
+    public City getCity() {
+        return city;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public String getVenue() {
+        return venue;
+    }
+
+    public void setVenue(String venue) {
+        this.venue = venue;
     }
 
     public double getPrice() {

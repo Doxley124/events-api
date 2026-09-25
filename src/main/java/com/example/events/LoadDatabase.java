@@ -26,22 +26,24 @@ class LoadDatabase {
                             "NOISE",
                             "Experimental music jam night.",
                             LocalDateTime.of(LocalDate.of(2026, 11, 20), LocalTime.NOON),
-                            "The Shed - London",
+                            City.LONDON,
+                            "The Shed",
                             11.99,
                             "music"
                     )
                 )
             );
             log.info("Preloading " + eventRepository.save(
-                            new Event(
-                                    "Life Drawing",
-                                    "1 hour life drawing class with 2 models.",
-                                    LocalDateTime.of(LocalDate.of(2026, 12, 2), LocalTime.MIDNIGHT),
-                                    "Willow Hall",
-                                    8,
-                                    "art"
-                            )
+                    new Event(
+                            "Life Drawing",
+                            "1 hour life drawing class with 2 models.",
+                            LocalDateTime.of(LocalDate.of(2026, 12, 2), LocalTime.MIDNIGHT),
+                            City.BRISTOL,
+                            "Willow Hall",
+                            8,
+                            "art"
                     )
+                )
             );
         };
     }

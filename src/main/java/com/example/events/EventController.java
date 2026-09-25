@@ -1,14 +1,10 @@
 package com.example.events;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 class EventController {
@@ -34,12 +30,22 @@ class EventController {
     }
 
     // Single item
-
     @GetMapping("/events/{id}")
     Event one(@PathVariable Long id) {
 
         return repository.findById(id)
                 .orElseThrow(() -> new EventNotFoundException(id));
+    }
+
+    // Single item
+    @GetMapping("/events/filter")
+    List<Event> getEventByCity(@RequestParam(required = false) City city,
+                               @RequestParam(required = false) String mainType) {
+        return StreamSupport.stream(repository.findAll().spliterator(), false)
+                .filter(e ->
+                        (city == null || e.getCity().equals(city)) &&
+                                (mainType == null || e.getMainType().equals(mainType))
+                ).toList();
     }
 
     @PutMapping("/events/{id}")
