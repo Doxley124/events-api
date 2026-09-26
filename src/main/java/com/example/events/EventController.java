@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin
 class EventController {
 
     private final EventRepository repository;
@@ -43,8 +45,8 @@ class EventController {
                                @RequestParam(required = false) String mainType) {
         return StreamSupport.stream(repository.findAll().spliterator(), false)
                 .filter(e ->
-                        (city == null || e.getCity().equals(city)) &&
-                                (mainType == null || e.getMainType().equals(mainType))
+                        (StringUtils.isBlank(city == null ? null : city.toString()) || e.getCity().equals(city)) &&
+                                (StringUtils.isBlank(mainType) || e.getMainType().equals(mainType))
                 ).toList();
     }
 
