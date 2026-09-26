@@ -45,6 +45,30 @@ class LoadDatabase {
                     )
                 )
             );
+            log.info("Preloading " + eventRepository.save(
+                            new Event(
+                                    "Gardening Project",
+                                    "Join a team of gardeners in the local park.",
+                                    LocalDateTime.of(LocalDate.of(2027, 1, 4), LocalTime.MIDNIGHT),
+                                    City.BRISTOL,
+                                    "Square Park",
+                                    0,
+                                    "community"
+                            )
+                    )
+            );
+            log.info("Preloading " + eventRepository.save(
+                            new Event(
+                                    "Loud Mouth Presents...",
+                                    "Rock n Roll music by Loud Mouth Records",
+                                    LocalDateTime.of(LocalDate.of(2027, 3, 14), LocalTime.MIDNIGHT),
+                                    City.LONDON,
+                                    "The Basement",
+                                    10,
+                                    "music"
+                            )
+                    )
+            );
         };
     }
 }
