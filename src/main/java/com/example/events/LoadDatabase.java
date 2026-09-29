@@ -29,7 +29,8 @@ class LoadDatabase {
                             City.LONDON,
                             "The Shed",
                             11.99,
-                            "music"
+                            "music",
+                            "noise-poster.png"
                     )
                 )
             );
@@ -41,7 +42,8 @@ class LoadDatabase {
                             City.BRISTOL,
                             "Willow Hall",
                             8,
-                            "art"
+                            "art",
+                            "life-drawing-poster.jpeg"
                     )
                 )
             );
@@ -53,7 +55,8 @@ class LoadDatabase {
                                     City.BRISTOL,
                                     "Square Park",
                                     0,
-                                    "community"
+                                    "community",
+                                    "gardening-poster.jpeg"
                             )
                     )
             );
@@ -65,7 +68,8 @@ class LoadDatabase {
                                     City.LONDON,
                                     "The Basement",
                                     10,
-                                    "music"
+                                    "music",
+                                    "loud-mouth-poster.jpg"
                             )
                     )
             );

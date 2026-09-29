@@ -19,8 +19,10 @@ class Event {
     private String venue;
     private double price;
     private String mainType;
+    private String imageURL;
 
-    public Event(String eventName, String description, LocalDateTime date, City city, String venue, double price, String mainType) {
+    public Event(String eventName, String description, LocalDateTime date, City city, String venue, double price,
+                 String mainType, String imageURL) {
         this.eventName = eventName;
         this.description = description;
         this.date = date;
@@ -28,6 +30,7 @@ class Event {
         this.venue = venue;
         this.price = price;
         this.mainType = mainType;
+        this.imageURL = imageURL;
     }
 
     public Event() {}
@@ -94,5 +97,13 @@ class Event {
 
     public void setMainType(String mainType) {
         this.mainType = mainType;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }
